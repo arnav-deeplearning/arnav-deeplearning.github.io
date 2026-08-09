@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Bio | {{ site.title }}{% endblock %}
+{% block content %}
+
+<section style="padding-top: 56px;">
+  <div class="container">
+    <div class="section-head" style="margin-bottom: 48px;">
+      <span class="eyebrow">About me</span>
+      <h2>Hi, I'm {{ site.short_name }}</h2>
+    </div>
+
+    <div class="bio-layout">
+      <aside class="fact-card reveal">
+        <h3>Quick Facts</h3>
+        <ul class="fact-list">
+          <li>
+            <div class="fact-label">Current Rank</div>
+            <div class="fact-value">{{ profile.rank }}</div>
+          </li>
+          <li>
+            <div class="fact-label">Certified</div>
+            <div class="fact-value">{{ profile.rank_date }}</div>
+          </li>
+          <li>
+            <div class="fact-label">School</div>
+            <div class="fact-value">{{ profile.school }}</div>
+          </li>
+          <li>
+            <div class="fact-label">Instructor</div>
+            <div class="fact-value">{{ profile.instructor }}</div>
+          </li>
+          <li>
+            <div class="fact-label">Training since</div>
+            <div class="fact-value">{{ profile.started | capitalize }}</div>
+          </li>
+          <li>
+            <div class="fact-label">Focus areas</div>
+            <div class="fact-value">Taekwondo &amp; AI/software</div>
+          </li>
+        </ul>
+      </aside>
+
+      <div class="bio-prose reveal">
+        {% for paragraph in paragraphs %}
+        <p>{{ paragraph }}</p>
+        {% endfor %}
+
+        <div class="note-box">
+          Want the full timeline? Head over to the <a href="journey.html" style="color: var(--gold-soft); font-weight:600;">My Journey</a>
+          page for a belt-by-belt look, or check out <a href="resources.html" style="color: var(--gold-soft); font-weight:600;">Apps &amp; Resources</a>
+          to see what I'm building right now.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

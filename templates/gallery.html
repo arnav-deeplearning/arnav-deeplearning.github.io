@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Gallery | {{ site.title }}{% endblock %}
+{% block content %}
+
+<section style="padding-top: 56px;">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Gallery</span>
+      <h2>Moments from the mat</h2>
+      <p>Training sessions, belt tests, and tournaments — photos coming soon.</p>
+    </div>
+
+    <div class="gallery-grid reveal">
+      {% for item in gallery %}
+      <div class="gallery-tile">
+        {% if item.src %}
+        <img src="static/images/gallery/{{ item.src }}" alt="{{ item.caption }}">
+        {% else %}
+        <span class="icon">📷</span>
+        <span class="caption">{{ item.caption }}</span>
+        <span class="muted" style="font-size: 0.75rem;">Photo coming soon</span>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="note-box reveal">
+      To add real photos: drop image files into <code>static/images/gallery/</code>, then set the matching
+      <code>"src"</code> value in the <code>GALLERY</code> list inside <code>data/content.py</code> and re-run
+      <code>python build.py</code>.
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}My Journey | {{ site.title }}{% endblock %}
+{% block content %}
+
+<section style="padding-top: 56px;">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">My Taekwondo journey</span>
+      <h2>From white belt to {{ profile.rank }}</h2>
+      <p>A look back at how I got here — and where this is headed next.</p>
+    </div>
+
+    <div class="timeline reveal">
+      {% for item in journey %}
+      <div class="timeline-item">
+        <span class="timeline-dot" style="background: var(--{{ item.belt }}-belt);"></span>
+        <div class="timeline-period">{{ item.period }}</div>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="note-box reveal">
+      This timeline grows as I do. New belts, competitions, and milestones get added to
+      <code>data/content.py</code> — no template changes needed.
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <span class="eyebrow">Taekwondo &times; AI</span>
+      <h1>Hi, I'm {{ site.short_name }} —<br><span class="highlight">Black Belt &amp; Builder.</span></h1>
+      <p class="hero-lede">{{ site.mission }}</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="resources.html">Explore the Apps</a>
+        <a class="btn btn-ghost" href="journey.html">See My TKD Journey</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="num">3rd Dan</div>
+          <div class="label">Black Belt</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">Childhood+</div>
+          <div class="label">Years training</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">{{ apps_preview|length }}+</div>
+          <div class="label">Apps in the works</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-card reveal">
+      <div class="belt-strip">
+        <span class="belt-dot" style="background: var(--white-belt);"></span>
+        <span class="belt-dot" style="background: var(--yellow-belt);"></span>
+        <span class="belt-dot" style="background: var(--green-belt);"></span>
+        <span class="belt-dot" style="background: var(--blue-belt);"></span>
+        <span class="belt-dot" style="background: var(--red-belt);"></span>
+        <span class="belt-dot" style="background: var(--black-belt); border: 1px solid var(--border);"></span>
+      </div>
+      <h3>Current Rank</h3>
+      <div class="rank-line"><strong>{{ profile.rank }}</strong></div>
+      <div class="rank-line">Certified {{ profile.rank_date }}</div>
+      <div class="rank-line">{{ profile.school }}</div>
+      <div class="rank-line">Presented by {{ profile.instructor }}</div>
+    </div>
+  </div>
+</section>
+
+<section class="mission">
+  <div class="container mission-inner reveal">
+    <span class="eyebrow">Why this site exists</span>
+    <h2>Taekwondo gave me discipline. AI gives me a way to give back.</h2>
+    <p>{{ site.mission }}</p>
+    <a class="btn btn-ghost" href="bio.html">Read my full story &rarr;</a>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">My journey</span>
+      <h2>From a kids' class to 3rd Dan</h2>
+    </div>
+    <div class="timeline reveal">
+      {% for item in journey_preview %}
+      <div class="timeline-item">
+        <span class="timeline-dot" style="background: var(--{{ item.belt }}-belt);"></span>
+        <div class="timeline-period">{{ item.period }}</div>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    <div style="text-align:center; margin-top: 28px;">
+      <a class="btn btn-ghost" href="journey.html">View the full timeline &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">What I'm building</span>
+      <h2>Apps for the TKD community — starting simple, aiming high</h2>
+      <p>Every app on this site starts as a card right here. First up: study tools for students of
+         every belt. Longer term: adaptive tools built specifically for special needs children.</p>
+    </div>
+    <div class="cards-grid reveal">
+      {% for app in apps_preview %}
+      <div class="card">
+        <div class="card-top">
+          <div class="card-icon">{{ app.icon }}</div>
+          <span class="status-badge status-{{ app.status }}">{{ status_labels[app.status] }}</span>
+        </div>
+        <h3>{{ app.title }}</h3>
+        <p>{{ app.description }}</p>
+        <div class="tag-row">
+          {% for tag in app.tags %}
+          <span class="tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div style="text-align:center; margin-top: 28px;">
+      <a class="btn btn-primary" href="resources.html">See all apps &amp; resources &rarr;</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
