@@ -16,7 +16,7 @@
 
     <div class="cards-grid reveal">
       {% for app in apps %}
-      <div class="card">
+      {% set card_body %}
         <div class="card-top">
           <div class="card-icon">{{ app.icon }}</div>
           <span class="status-badge status-{{ app.status }}">{{ status_labels[app.status] }}</span>
@@ -28,25 +28,12 @@
           <span class="tag">{{ tag }}</span>
           {% endfor %}
         </div>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="mission">
-  <div class="container">
-    <div class="section-head" style="margin-bottom: 20px;">
-      <span class="eyebrow">Quiz &amp; flashcard leveling</span>
-      <h2>Built around real belt progression</h2>
-      <p>The flashcard and quiz apps will use these belt levels to gate content difficulty.</p>
-    </div>
-    <div class="belt-legend reveal">
-      {% for belt in belt_levels %}
-      <span class="belt-chip">
-        <span class="swatch" style="background: var(--{{ belt.color }}); border: 1px solid var(--border);"></span>
-        {{ belt.name }}
-      </span>
+      {% endset %}
+      {% if app.href %}
+      <a href="{{ app.href }}" class="card">{{ card_body }}</a>
+      {% else %}
+      <div class="card">{{ card_body }}</div>
+      {% endif %}
       {% endfor %}
     </div>
   </div>

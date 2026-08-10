@@ -86,7 +86,7 @@
     </div>
     <div class="cards-grid reveal">
       {% for app in apps_preview %}
-      <div class="card">
+      {% set card_body %}
         <div class="card-top">
           <div class="card-icon">{{ app.icon }}</div>
           <span class="status-badge status-{{ app.status }}">{{ status_labels[app.status] }}</span>
@@ -98,7 +98,12 @@
           <span class="tag">{{ tag }}</span>
           {% endfor %}
         </div>
-      </div>
+      {% endset %}
+      {% if app.href %}
+      <a href="{{ app.href }}" class="card">{{ card_body }}</a>
+      {% else %}
+      <div class="card">{{ card_body }}</div>
+      {% endif %}
       {% endfor %}
     </div>
     <div style="text-align:center; margin-top: 28px;">

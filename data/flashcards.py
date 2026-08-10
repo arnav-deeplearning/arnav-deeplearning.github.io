@@ -1,0 +1,127 @@
+"""
+Content for the TKD Flashcards app.
+
+Sourced from the Ji Ho Choi Taekwondo Institute's own student handouts
+(belt study guides, Korean commands/vocabulary/numbers/stances, Five
+Tenets) rather than generic internet Taekwondo facts, so this reflects
+Arnav's actual school curriculum and belt progression.
+
+Same philosophy as content.py: plain Python data, no HTML/JS edits
+needed to add or change a card. build.py exports FLASHCARDS to
+static/data/flashcards.json (and embeds it inline in flashcards.html)
+for the client-side app.
+
+`belt` values must match a `name` in content.BELT_LEVELS so the belt
+filter on the flashcards page lines up.
+`category` values must match an `id` in FLASHCARD_CATEGORIES.
+
+Known source discrepancies (the school's own handouts aren't fully
+internally consistent — flagged here rather than silently "corrected"):
+- "Bow" (경례) is romanized both "Kyung-Nay" and "Kyung-Nye" across
+  different handouts; this file uses "Kyung-Nye".
+- Poomsae names are romanized "Taeguk ___-Jung" in the belt guides and
+  "Taeguk Il-Jahng" in the vocabulary sheet; standardized here to
+  "Taeguk ___-Jang".
+- "Right stance" is given as "Oren Seogi" (standard Kukkiwon spelling
+  elsewhere is usually "Oreun Seogi") — kept as the school spells it.
+- Taeguk Pal-Jang (Form 8) is not explicitly confirmed for Sr. Red in
+  the source handout (likely an omission), but is included as the
+  logical next form before black belt — worth confirming with an
+  instructor before treating as certain.
+"""
+
+FLASHCARD_CATEGORIES = [
+    {"id": "commands", "label": "Classroom Commands"},
+    {"id": "vocabulary", "label": "Core Vocabulary"},
+    {"id": "numbers", "label": "Numbers"},
+    {"id": "stances", "label": "Stances"},
+    {"id": "techniques", "label": "Kicks, Blocks & Strikes"},
+    {"id": "poomsae", "label": "Poomsae (Forms)"},
+    {"id": "tenets", "label": "Five Tenets"},
+]
+
+FLASHCARDS = [
+    # --- Classroom Commands ---
+    {"id": "cmd-01", "category": "commands", "belt": "White", "korean": "Joon-Bee", "pronunciation": "joon-bee", "english": "Ready", "note": "Called to bring students into ready stance."},
+    {"id": "cmd-02", "category": "commands", "belt": "White", "korean": "Cha-Ryut", "pronunciation": "chah-ryuht", "english": "Attention", "note": "Called to bring students to attention."},
+    {"id": "cmd-03", "category": "commands", "belt": "White", "korean": "Kyung-Nye", "pronunciation": "kyung-nyeh", "english": "Bow", "note": "Shows respect to instructors and fellow students."},
+    {"id": "cmd-04", "category": "commands", "belt": "White", "korean": "Shi-Jak", "pronunciation": "shee-jahk", "english": "Start", "note": "Signals the start of a form or drill."},
+    {"id": "cmd-05", "category": "commands", "belt": "White", "korean": "Geu-mahn", "pronunciation": "guh-mahn", "english": "Stop", "note": "Signals the end of a form or drill."},
+    {"id": "cmd-06", "category": "commands", "belt": "White", "korean": "Shi-woh", "pronunciation": "shee-woh", "english": "Rest", "note": "Called after Cha-Ryut to relax the stance."},
+    {"id": "cmd-07", "category": "commands", "belt": "White", "korean": "Ba-Ro", "pronunciation": "bah-roh", "english": "As you were", "note": "Return to the ready position."},
+    {"id": "cmd-08", "category": "commands", "belt": "White", "korean": "Ki-hap", "pronunciation": "kee-hahp", "english": "Yell", "note": "A focused shout used to project power and energy."},
+    {"id": "cmd-09", "category": "commands", "belt": "White", "korean": "Gahm-sah-hahm-ni-da", "pronunciation": "gahm-sah-hahm-nee-dah", "english": "Thank you", "note": "Always follow instructor replies with \"sir\" or \"ma'am.\""},
+    {"id": "cmd-10", "category": "commands", "belt": "White", "korean": "Ahn-nyung-ha-seh-yo", "pronunciation": "ahn-nyung-hah-say-yo", "english": "Hello", "note": "A polite greeting used in and out of the dojang."},
+
+    # --- Core Vocabulary ---
+    {"id": "voc-01", "category": "vocabulary", "belt": "White", "korean": "Dojang", "pronunciation": "doh-jahng", "english": "Practice facility", "note": "The training hall where Taekwondo is practiced."},
+    {"id": "voc-02", "category": "vocabulary", "belt": "White", "korean": "Poomsae", "pronunciation": "poom-seh", "english": "Choreographed forms", "note": "A set sequence of movements practiced against an imaginary opponent."},
+    {"id": "voc-03", "category": "vocabulary", "belt": "White", "korean": "Taeguk", "pronunciation": "teh-gook", "english": "Taekwondo series of forms", "note": "The name for the color-belt poomsae series."},
+    {"id": "voc-04", "category": "vocabulary", "belt": "White", "korean": "Ahp", "pronunciation": "ahp", "english": "Front", "note": "Combines with technique words, e.g. Ahp Cha Ki (front kick)."},
+    {"id": "voc-05", "category": "vocabulary", "belt": "White", "korean": "Yup", "pronunciation": "yup", "english": "Side", "note": "Combines with technique words, e.g. Yup Cha Ki (side kick)."},
+    {"id": "voc-06", "category": "vocabulary", "belt": "White", "korean": "Dwi", "pronunciation": "dwee", "english": "Back", "note": "Combines with technique words, e.g. Dwi Cha Ki (back kick)."},
+    {"id": "voc-07", "category": "vocabulary", "belt": "White", "korean": "Doleo", "pronunciation": "doh-leh-oh", "english": "Turn", "note": "Used in turning techniques."},
+    {"id": "voc-08", "category": "vocabulary", "belt": "White", "korean": "Ah Reh", "pronunciation": "ah-reh", "english": "Low", "note": "Combines with Mak Ki, e.g. Ah Reh Mak Ki (low block)."},
+    {"id": "voc-09", "category": "vocabulary", "belt": "White", "korean": "Mom Tong", "pronunciation": "mohm-tohng", "english": "Middle", "note": "Combines with technique words, e.g. Mom Tong Ji Ruh Ki (middle punch)."},
+    {"id": "voc-10", "category": "vocabulary", "belt": "White", "korean": "Eol Gool", "pronunciation": "uhl-gool", "english": "High", "note": "Combines with Mak Ki, e.g. Eol Gool Mak Ki (high block)."},
+    {"id": "voc-11", "category": "vocabulary", "belt": "White", "korean": "Mak Ki", "pronunciation": "mahk-kee", "english": "Block", "note": "General word for a blocking technique."},
+    {"id": "voc-12", "category": "vocabulary", "belt": "White", "korean": "Cha Ki", "pronunciation": "chah-kee", "english": "Kick", "note": "General word for a kicking technique."},
+    {"id": "voc-13", "category": "vocabulary", "belt": "White", "korean": "Ji Ruh Ki", "pronunciation": "jee-ruh-kee", "english": "Punch", "note": "General word for a punching technique."},
+
+    # --- Numbers: native Korean counting (White belt memorization requirement) ---
+    {"id": "num-01", "category": "numbers", "belt": "White", "korean": "Ha-Na", "pronunciation": "hah-nah", "english": "One", "note": "Native Korean counting number 1."},
+    {"id": "num-02", "category": "numbers", "belt": "White", "korean": "Dool", "pronunciation": "dool", "english": "Two", "note": "Native Korean counting number 2."},
+    {"id": "num-03", "category": "numbers", "belt": "White", "korean": "Seht", "pronunciation": "seht", "english": "Three", "note": "Native Korean counting number 3."},
+    {"id": "num-04", "category": "numbers", "belt": "White", "korean": "Neht", "pronunciation": "neht", "english": "Four", "note": "Native Korean counting number 4."},
+    {"id": "num-05", "category": "numbers", "belt": "White", "korean": "Da-Sut", "pronunciation": "dah-suht", "english": "Five", "note": "Native Korean counting number 5."},
+    {"id": "num-06", "category": "numbers", "belt": "White", "korean": "Yuh-Suht", "pronunciation": "yuh-suht", "english": "Six", "note": "Native Korean counting number 6."},
+    {"id": "num-07", "category": "numbers", "belt": "White", "korean": "Il-gohp", "pronunciation": "il-gohp", "english": "Seven", "note": "Native Korean counting number 7."},
+    {"id": "num-08", "category": "numbers", "belt": "White", "korean": "Yuh-dul", "pronunciation": "yuh-dul", "english": "Eight", "note": "Native Korean counting number 8."},
+    {"id": "num-09", "category": "numbers", "belt": "White", "korean": "Ah-hope", "pronunciation": "ah-hope", "english": "Nine", "note": "Native Korean counting number 9."},
+    {"id": "num-10", "category": "numbers", "belt": "White", "korean": "Yul", "pronunciation": "yul", "english": "Ten", "note": "Native Korean counting number 10."},
+
+    # --- Numbers: Sino-Korean ordinals (the roots behind Taeguk form names) ---
+    {"id": "num-11", "category": "numbers", "belt": "Yellow", "korean": "Il", "pronunciation": "il", "english": "First", "note": "Sino-Korean ordinal root — used in Taeguk Il-Jang (Form 1)."},
+    {"id": "num-12", "category": "numbers", "belt": "Yellow", "korean": "Ee", "pronunciation": "ee", "english": "Second", "note": "Sino-Korean ordinal root — used in Taeguk Ee-Jang (Form 2)."},
+    {"id": "num-13", "category": "numbers", "belt": "Yellow", "korean": "Sahm", "pronunciation": "sahm", "english": "Third", "note": "Sino-Korean ordinal root — used in Taeguk Sahm-Jang (Form 3)."},
+    {"id": "num-14", "category": "numbers", "belt": "Yellow", "korean": "Sah", "pronunciation": "sah", "english": "Fourth", "note": "Sino-Korean ordinal root — used in Taeguk Sah-Jang (Form 4)."},
+    {"id": "num-15", "category": "numbers", "belt": "Yellow", "korean": "Oh", "pronunciation": "oh", "english": "Fifth", "note": "Sino-Korean ordinal root — used in Taeguk O-Jang (Form 5)."},
+    {"id": "num-16", "category": "numbers", "belt": "Yellow", "korean": "Yook", "pronunciation": "yook", "english": "Sixth", "note": "Sino-Korean ordinal root — used in Taeguk Yuk-Jang (Form 6)."},
+    {"id": "num-17", "category": "numbers", "belt": "Yellow", "korean": "Chil", "pronunciation": "chil", "english": "Seventh", "note": "Sino-Korean ordinal root — used in Taeguk Chil-Jang (Form 7)."},
+    {"id": "num-18", "category": "numbers", "belt": "Yellow", "korean": "Pahl", "pronunciation": "pahl", "english": "Eighth", "note": "Sino-Korean ordinal root — used in Taeguk Pal-Jang (Form 8)."},
+
+    # --- Stances ---
+    {"id": "st-01", "category": "stances", "belt": "White", "korean": "Junbee Seogi", "pronunciation": "joon-bee suh-ghee", "english": "Ready stance", "note": "The starting stance before a form or drill begins."},
+    {"id": "st-02", "category": "stances", "belt": "White", "korean": "Moa Seogi", "pronunciation": "moh-ah suh-ghee", "english": "Closed stance", "note": "Feet together, a basic standing position."},
+    {"id": "st-03", "category": "stances", "belt": "White", "korean": "Wen Seogi", "pronunciation": "wen suh-ghee", "english": "Left stance", "note": "Weight and lead side to the left."},
+    {"id": "st-04", "category": "stances", "belt": "White", "korean": "Oren Seogi", "pronunciation": "oh-ren suh-ghee", "english": "Right stance", "note": "Weight and lead side to the right."},
+    {"id": "st-05", "category": "stances", "belt": "Sr. White", "korean": "Juchum Seogi", "pronunciation": "joo-choom suh-ghee", "english": "Horse / riding stance", "note": "A wide, low stance that builds leg strength."},
+    {"id": "st-06", "category": "stances", "belt": "Sr. White", "korean": "Ap Kubi", "pronunciation": "ahp koo-bee", "english": "Long stance", "note": "A deep front stance used throughout early forms."},
+    {"id": "st-07", "category": "stances", "belt": "Sr. White", "korean": "Ap Seogi", "pronunciation": "ahp suh-ghee", "english": "Walking stance", "note": "A shorter, more natural forward stance."},
+    {"id": "st-08", "category": "stances", "belt": "Jr. Blue", "korean": "Dwit Seogi", "pronunciation": "dwit suh-ghee", "english": "Back stance", "note": "Weight shifted onto the rear leg."},
+
+    # --- Kicks, Blocks & Strikes (built from the school's own front/side/back + kick/block/punch word combinations) ---
+    {"id": "tech-01", "category": "techniques", "belt": "Sr. White", "korean": "Ahp Cha Ki", "pronunciation": "ahp chah-kee", "english": "Front kick", "note": "Ahp (front) + Cha Ki (kick)."},
+    {"id": "tech-02", "category": "techniques", "belt": "Sr. White", "korean": "Eol Gool Mak Ki", "pronunciation": "uhl-gool mahk-kee", "english": "High block", "note": "Eol Gool (high) + Mak Ki (block)."},
+    {"id": "tech-03", "category": "techniques", "belt": "Sr. White", "korean": "Ah Reh Mak Ki", "pronunciation": "ah-reh mahk-kee", "english": "Low block", "note": "Ah Reh (low) + Mak Ki (block)."},
+    {"id": "tech-04", "category": "techniques", "belt": "Sr. White", "korean": "Mom Tong Ji Ruh Ki", "pronunciation": "mohm-tohng jee-ruh-kee", "english": "Middle punch", "note": "Mom Tong (middle) + Ji Ruh Ki (punch)."},
+    {"id": "tech-05", "category": "techniques", "belt": "Blue", "korean": "Yup Cha Ki", "pronunciation": "yup chah-kee", "english": "Side kick", "note": "Yup (side) + Cha Ki (kick)."},
+    {"id": "tech-06", "category": "techniques", "belt": "Sr. Blue", "korean": "Dwi Cha Ki", "pronunciation": "dwee chah-kee", "english": "Back kick", "note": "Dwi (back) + Cha Ki (kick)."},
+
+    # --- Poomsae (Taeguk forms) ---
+    {"id": "po-01", "category": "poomsae", "belt": "Yellow", "korean": "Taeguk Il-Jang", "pronunciation": "teh-gook il-jahng", "english": "Taeguk Form 1", "note": "First of the eight color-belt Taeguk forms."},
+    {"id": "po-02", "category": "poomsae", "belt": "Sr. Yellow", "korean": "Taeguk Ee-Jang", "pronunciation": "teh-gook ee-jahng", "english": "Taeguk Form 2", "note": "Second Taeguk form."},
+    {"id": "po-03", "category": "poomsae", "belt": "Sr. Green", "korean": "Taeguk Sahm-Jang", "pronunciation": "teh-gook sahm-jahng", "english": "Taeguk Form 3", "note": "Third Taeguk form."},
+    {"id": "po-04", "category": "poomsae", "belt": "Jr. Blue", "korean": "Taeguk Sah-Jang", "pronunciation": "teh-gook sah-jahng", "english": "Taeguk Form 4", "note": "Fourth Taeguk form."},
+    {"id": "po-05", "category": "poomsae", "belt": "Red", "korean": "Taeguk O-Jang", "pronunciation": "teh-gook oh-jahng", "english": "Taeguk Form 5", "note": "Fifth Taeguk form."},
+    {"id": "po-06", "category": "poomsae", "belt": "Jr. Red", "korean": "Taeguk Yuk-Jang", "pronunciation": "teh-gook yook-jahng", "english": "Taeguk Form 6", "note": "Sixth Taeguk form."},
+    {"id": "po-07", "category": "poomsae", "belt": "Med. Red", "korean": "Taeguk Chil-Jang", "pronunciation": "teh-gook chil-jahng", "english": "Taeguk Form 7", "note": "Seventh Taeguk form."},
+    {"id": "po-08", "category": "poomsae", "belt": "Sr. Red", "korean": "Taeguk Pal-Jang", "pronunciation": "teh-gook pahl-jahng", "english": "Taeguk Form 8", "note": "Final color-belt form before black belt — confirm exact test timing with your instructor."},
+
+    # --- Five Tenets (introduced in Yellow belt theory) ---
+    {"id": "ten-01", "category": "tenets", "belt": "Yellow", "korean": "Ye-Eui", "pronunciation": "yeh-wee", "english": "Courtesy", "note": "First of the Five Tenets of Taekwondo."},
+    {"id": "ten-02", "category": "tenets", "belt": "Yellow", "korean": "Yum-chi", "pronunciation": "yum-chee", "english": "Integrity", "note": "Second of the Five Tenets of Taekwondo."},
+    {"id": "ten-03", "category": "tenets", "belt": "Yellow", "korean": "In-nae", "pronunciation": "in-neh", "english": "Perseverance", "note": "Third of the Five Tenets of Taekwondo."},
+    {"id": "ten-04", "category": "tenets", "belt": "Yellow", "korean": "Guk-ki", "pronunciation": "gook-kee", "english": "Self-Control", "note": "Fourth of the Five Tenets of Taekwondo."},
+    {"id": "ten-05", "category": "tenets", "belt": "Yellow", "korean": "Bek-jul-bul-gul", "pronunciation": "bek-jool-bool-gool", "english": "Indomitable Spirit", "note": "Fifth and final tenet of Taekwondo."},
+]

@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block title %}TKD Flashcards | {{ site.title }}{% endblock %}
+{% block content %}
+
+<section style="padding-top: 56px;">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Apps &amp; resources &middot; TKD Flashcards</span>
+      <h2>Learn the language of Taekwondo</h2>
+      <p>Straight from the Ji Ho Choi Taekwondo Institute curriculum — commands, vocabulary, numbers, stances, techniques, poomsae names, and the Five Tenets. Filter by belt and category, flip a card, and mark it as you go.</p>
+    </div>
+
+    <div class="filter-bar reveal">
+      <div class="filter-field">
+        <label for="beltFilter">Belt</label>
+        <select id="beltFilter">
+          <option value="all">All belts</option>
+          {% for belt in belt_levels %}
+          <option value="{{ belt.name }}">{{ belt.name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="filter-field">
+        <label for="categoryFilter">Category</label>
+        <select id="categoryFilter">
+          <option value="all">All categories</option>
+          {% for cat in categories %}
+          <option value="{{ cat.id }}">{{ cat.label }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="filter-actions">
+        <button type="button" class="btn btn-ghost" id="shuffleBtn">Shuffle</button>
+        <button type="button" class="btn btn-ghost" id="resetProgressBtn">Reset Progress</button>
+      </div>
+    </div>
+
+    <div class="deck-meta reveal">
+      <div class="progress-bar"><div class="progress-bar-fill" id="progressFill"></div></div>
+      <div class="deck-meta-row">
+        <span class="muted" id="deckPosition">Card 0 of 0</span>
+        <span class="deck-stats">
+          <span class="stat-pill stat-known" id="knownCount">0 got it</span>
+          <span class="stat-pill stat-learning" id="learningCount">0 learning</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="flashcard-stage reveal">
+      <button type="button" class="deck-nav deck-nav-prev" id="prevBtn" aria-label="Previous card">&larr;</button>
+
+      <div class="flashcard" id="flashcard" tabindex="0" role="button" aria-label="Flip card">
+        <div class="flashcard-inner">
+          <div class="flashcard-face flashcard-front">
+            <span class="flashcard-category" id="cardCategory">&nbsp;</span>
+            <div class="flashcard-korean" id="cardKorean">Loading&hellip;</div>
+            <div class="flashcard-pronunciation" id="cardPronunciation"></div>
+            <span class="flashcard-hint">Tap to flip</span>
+          </div>
+          <div class="flashcard-face flashcard-back">
+            <div class="flashcard-english" id="cardEnglish"></div>
+            <p class="flashcard-note" id="cardNote"></p>
+            <span class="flashcard-hint">Tap to flip back</span>
+          </div>
+        </div>
+      </div>
+
+      <button type="button" class="deck-nav deck-nav-next" id="nextBtn" aria-label="Next card">&rarr;</button>
+    </div>
+
+    <div class="deck-actions reveal">
+      <button type="button" class="btn deck-btn-learning" id="stillLearningBtn">Still Learning</button>
+      <button type="button" class="btn deck-btn-known" id="gotItBtn">Got It!</button>
+    </div>
+
+    <div class="note-box reveal" id="flashcardsEmpty" style="display:none;">
+      <strong id="emptyHeadline">Deck complete!</strong>
+      <p id="emptySummary" style="margin: 8px 0 14px;"></p>
+      <button type="button" class="btn btn-primary" id="restartBtn">Restart this deck</button>
+    </div>
+  </div>
+</section>
+
+<script id="flashcards-data" type="application/json">{{ cards_json | safe }}</script>
+<script src="static/js/flashcards.js"></script>
+{% endblock %}

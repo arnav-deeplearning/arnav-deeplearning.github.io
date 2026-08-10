@@ -19,8 +19,6 @@ SITE = {
         "and building toward adaptive apps designed specifically for "
         "special needs children in the TKD community."
     ),
-    "email": "saravanakuppusamy2@gmail.com",
-    "year": 2026,
 }
 
 NAV = [
@@ -121,15 +119,26 @@ GALLERY = [
     {"caption": "3rd Dan certification", "src": None},
 ]
 
-# Belt levels used by the future quiz app's leveling system —
-# kept here now so the data model is ready when the app is built.
+# Belt levels — the actual 14-rank ladder used by the Ji Ho Choi Taekwondo
+# Institute (per the school's own "Kukkiwon Taekwondo Ranking" and belt
+# study guide handouts), not a generic 6-color curriculum. Junior/Medium/
+# Senior sub-ranks are the same color belt with 1-3 gold stripes.
 # `color` maps to a CSS custom property defined in static/css/style.css.
+# Also used by the future quiz app's leveling system.
 BELT_LEVELS = [
     {"name": "White", "color": "white-belt"},
+    {"name": "Sr. White", "color": "white-belt"},
     {"name": "Yellow", "color": "yellow-belt"},
+    {"name": "Sr. Yellow", "color": "yellow-belt"},
     {"name": "Green", "color": "green-belt"},
+    {"name": "Sr. Green", "color": "green-belt"},
     {"name": "Blue", "color": "blue-belt"},
+    {"name": "Jr. Blue", "color": "blue-belt"},
+    {"name": "Sr. Blue", "color": "blue-belt"},
     {"name": "Red", "color": "red-belt"},
+    {"name": "Jr. Red", "color": "red-belt"},
+    {"name": "Med. Red", "color": "red-belt"},
+    {"name": "Sr. Red", "color": "red-belt"},
     {"name": "Black (Dan)", "color": "black-belt"},
 ]
 
@@ -138,7 +147,8 @@ APPS = [
     {
         "title": "TKD Flashcards",
         "icon": "🥋",
-        "status": "coming-soon",
+        "status": "live",
+        "href": "flashcards.html",
         "description": (
             "Learn Korean terminology, poomsae names, and belt-level "
             "vocabulary through quick, swipeable flashcards."
