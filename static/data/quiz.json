@@ -1,0 +1,946 @@
+{
+  "levels": [
+    "White",
+    "Yellow",
+    "Green",
+    "Blue",
+    "Red",
+    "Black Belt"
+  ],
+  "categories": [
+    {
+      "id": "history",
+      "label": "History & Origins"
+    },
+    {
+      "id": "terminology",
+      "label": "Terminology & Commands"
+    },
+    {
+      "id": "numbers",
+      "label": "Numbers"
+    },
+    {
+      "id": "techniques",
+      "label": "Stances, Kicks & Blocks"
+    },
+    {
+      "id": "tenets",
+      "label": "Five Tenets"
+    },
+    {
+      "id": "poomsae",
+      "label": "Poomsae (Forms)"
+    },
+    {
+      "id": "belts",
+      "label": "Belt System"
+    },
+    {
+      "id": "sparring",
+      "label": "Sparring & Competition"
+    },
+    {
+      "id": "trivia",
+      "label": "Trivia & Fun Facts"
+    }
+  ],
+  "questions": [
+    {
+      "id": "q-hist-01",
+      "category": "history",
+      "level": "White",
+      "question": "What does the word \"Taekwondo\" literally mean?",
+      "choices": [
+        "The way of the empty hand",
+        "The way of foot and fist",
+        "The way of the sword",
+        "The art of grappling"
+      ],
+      "correct": 1,
+      "explanation": "Tae (foot/kick) + Kwon (fist) + Do (way) -- \"the way of foot and fist.\" (\"Empty hand\" is actually what \"karate\" means.)"
+    },
+    {
+      "id": "q-hist-02",
+      "category": "history",
+      "level": "White",
+      "question": "In which country did Taekwondo originate?",
+      "choices": [
+        "China",
+        "Japan",
+        "Korea",
+        "Vietnam"
+      ],
+      "correct": 2,
+      "explanation": "Taekwondo developed in Korea, formalized in the 1940s-50s."
+    },
+    {
+      "id": "q-hist-03",
+      "category": "history",
+      "level": "Yellow",
+      "question": "During which decades did modern Taekwondo take shape, as Korean martial arts schools began unifying?",
+      "choices": [
+        "1800s-1810s",
+        "1920s-1930s",
+        "1940s-1950s",
+        "1970s-1980s"
+      ],
+      "correct": 2,
+      "explanation": "After Korea's 1945 liberation, several schools (kwans) founded by Korean masters began blending striking arts with native Korean kicking traditions."
+    },
+    {
+      "id": "q-hist-04",
+      "category": "history",
+      "level": "Green",
+      "question": "In what year was the name \"Taekwondo\" officially adopted by a board of Korean masters and historians?",
+      "choices": [
+        "1945",
+        "1955",
+        "1972",
+        "1988"
+      ],
+      "correct": 1,
+      "explanation": "The name was chosen on April 11, 1955, from a set of submitted proposals."
+    },
+    {
+      "id": "q-hist-05",
+      "category": "history",
+      "level": "Green",
+      "question": "Which older Korean martial art, known for fluid, high kicks, is frequently cited as an ancestral influence on Taekwondo?",
+      "choices": [
+        "Taekkyeon",
+        "Judo",
+        "Kung Fu",
+        "Kendo"
+      ],
+      "correct": 0,
+      "explanation": "Taekkyeon (along with Subak) is commonly cited as an influence on Taekwondo's emphasis on kicking."
+    },
+    {
+      "id": "q-hist-06",
+      "category": "history",
+      "level": "Blue",
+      "question": "In what year was the Kukkiwon (World Taekwondo Headquarters) established in Seoul?",
+      "choices": [
+        "1955",
+        "1972",
+        "1988",
+        "2000"
+      ],
+      "correct": 1,
+      "explanation": "The Kukkiwon's main building was completed November 30, 1972, and formally named in early 1973."
+    },
+    {
+      "id": "q-hist-07",
+      "category": "history",
+      "level": "Blue",
+      "question": "In what year was the World Taekwondo Federation (today called World Taekwondo) founded?",
+      "choices": [
+        "1955",
+        "1972",
+        "1973",
+        "1988"
+      ],
+      "correct": 2,
+      "explanation": "It was founded May 28, 1973, at its inaugural meeting held at the Kukkiwon."
+    },
+    {
+      "id": "q-hist-08",
+      "category": "history",
+      "level": "Red",
+      "question": "At which Olympic Games did Taekwondo become a full medal sport (not just a demonstration sport)?",
+      "choices": [
+        "1988 Seoul",
+        "1992 Barcelona",
+        "2000 Sydney",
+        "2004 Athens"
+      ],
+      "correct": 2,
+      "explanation": "Taekwondo appeared as a demonstration sport in 1988 and 1992, then became an official medal sport starting at the 2000 Sydney Games."
+    },
+    {
+      "id": "q-hist-09",
+      "category": "history",
+      "level": "Black Belt",
+      "question": "In what year did the \"World Taekwondo Federation (WTF)\" officially rebrand to \"World Taekwondo (WT)\"?",
+      "choices": [
+        "2000",
+        "2010",
+        "2017",
+        "2020"
+      ],
+      "correct": 2,
+      "explanation": "The organization rebranded in June 2017, partly to move away from the WTF acronym."
+    },
+    {
+      "id": "q-term-01",
+      "category": "terminology",
+      "level": "White",
+      "question": "What command tells students to come to attention?",
+      "choices": [
+        "Charyot",
+        "Kyungrye",
+        "Joonbi",
+        "Sijak"
+      ],
+      "correct": 0,
+      "explanation": "Charyot (also spelled Cha-ryeot) means attention."
+    },
+    {
+      "id": "q-term-02",
+      "category": "terminology",
+      "level": "White",
+      "question": "What is the Korean word for \"bow\"?",
+      "choices": [
+        "Charyot",
+        "Kyungrye",
+        "Kihap",
+        "Dojang"
+      ],
+      "correct": 1,
+      "explanation": "Kyungrye (Kyeong-rye) means bow, shown as a sign of respect."
+    },
+    {
+      "id": "q-term-03",
+      "category": "terminology",
+      "level": "White",
+      "question": "What is the Korean word for the training hall where Taekwondo is practiced?",
+      "choices": [
+        "Dobok",
+        "Dojang",
+        "Poomsae",
+        "Hogu"
+      ],
+      "correct": 1,
+      "explanation": "Dojang means training hall; Dobok is the uniform."
+    },
+    {
+      "id": "q-term-04",
+      "category": "terminology",
+      "level": "White",
+      "question": "What is the Korean word for the Taekwondo uniform?",
+      "choices": [
+        "Dojang",
+        "Dobok",
+        "Ti",
+        "Hogu"
+      ],
+      "correct": 1,
+      "explanation": "Dobok means uniform (\"do\" = way, \"bok\" = clothing)."
+    },
+    {
+      "id": "q-term-05",
+      "category": "terminology",
+      "level": "Yellow",
+      "question": "What is a \"Kihap\"?",
+      "choices": [
+        "A bow",
+        "A belt rank",
+        "A focused shout used for power and focus",
+        "A type of kick"
+      ],
+      "correct": 2,
+      "explanation": "A Kihap is a focused shout/yell used to project energy and power."
+    },
+    {
+      "id": "q-term-06",
+      "category": "terminology",
+      "level": "Yellow",
+      "question": "What does \"Kyorugi\" mean?",
+      "choices": [
+        "Forms/patterns",
+        "Sparring",
+        "Breaking (boards)",
+        "Meditation"
+      ],
+      "correct": 1,
+      "explanation": "Kyorugi (Gyeorugi) is the Korean term for sparring."
+    },
+    {
+      "id": "q-term-07",
+      "category": "terminology",
+      "level": "Yellow",
+      "question": "What is \"Poomsae\"?",
+      "choices": [
+        "Sparring",
+        "A belt test",
+        "A set pattern of techniques practiced against an imaginary opponent",
+        "A type of kick"
+      ],
+      "correct": 2,
+      "explanation": "Poomsae (also spelled Poomse) is a form/pattern."
+    },
+    {
+      "id": "q-term-08",
+      "category": "terminology",
+      "level": "Green",
+      "question": "What command means \"begin\" or \"start\"?",
+      "choices": [
+        "Sijak",
+        "Keuman",
+        "Kalyeo",
+        "Kyeso"
+      ],
+      "correct": 0,
+      "explanation": "Sijak (Shi-jak) means begin/start."
+    },
+    {
+      "id": "q-term-09",
+      "category": "terminology",
+      "level": "Blue",
+      "question": "In competition, what is the difference between \"Kalyeo\" and \"Keuman\"?",
+      "choices": [
+        "They're two spellings of the same word",
+        "Kalyeo pauses the match; Keuman ends it",
+        "Kalyeo ends the match; Keuman pauses it",
+        "Both mean \"begin\""
+      ],
+      "correct": 1,
+      "explanation": "Kalyeo is a referee call to pause/break; Keuman signals the match or exercise is fully over."
+    },
+    {
+      "id": "q-term-10",
+      "category": "terminology",
+      "level": "Red",
+      "question": "Who is typically addressed with the title \"Sabumnim\"?",
+      "choices": [
+        "A white belt student",
+        "A master instructor",
+        "A tournament judge only",
+        "A referee only"
+      ],
+      "correct": 1,
+      "explanation": "\"-nim\" is an honorific suffix; Sabumnim is used to address a master instructor."
+    },
+    {
+      "id": "q-term-11",
+      "category": "terminology",
+      "level": "Black Belt",
+      "question": "What is a \"Gam-jeom\" in competition?",
+      "choices": [
+        "A penalty point",
+        "A bonus point for a spinning kick",
+        "A type of stance",
+        "A belt promotion test"
+      ],
+      "correct": 0,
+      "explanation": "A Gam-jeom is a penalty; the point it costs is awarded to the opponent."
+    },
+    {
+      "id": "q-num-01",
+      "category": "numbers",
+      "level": "White",
+      "question": "What is the Korean word for \"one\" used when counting in class?",
+      "choices": [
+        "Dul",
+        "Set",
+        "Hana",
+        "Net"
+      ],
+      "correct": 2,
+      "explanation": "Hana is one; Dul, Set, and Net are two, three, and four."
+    },
+    {
+      "id": "q-num-02",
+      "category": "numbers",
+      "level": "White",
+      "question": "What is the Korean word for \"five\"?",
+      "choices": [
+        "Daseot",
+        "Yeoseot",
+        "Ilgop",
+        "Ahop"
+      ],
+      "correct": 0,
+      "explanation": "Daseot is five."
+    },
+    {
+      "id": "q-num-03",
+      "category": "numbers",
+      "level": "White",
+      "question": "What is the Korean word for \"ten\"?",
+      "choices": [
+        "Ahop",
+        "Yeodeol",
+        "Yeol",
+        "Ilgop"
+      ],
+      "correct": 2,
+      "explanation": "Yeol is ten."
+    },
+    {
+      "id": "q-num-04",
+      "category": "numbers",
+      "level": "Yellow",
+      "question": "What is the Korean word for \"seven\"?",
+      "choices": [
+        "Yeoseot",
+        "Ilgop",
+        "Yeodeol",
+        "Ahop"
+      ],
+      "correct": 1,
+      "explanation": "Ilgop is seven."
+    },
+    {
+      "id": "q-num-05",
+      "category": "numbers",
+      "level": "Yellow",
+      "question": "What is the Korean word for \"three\"?",
+      "choices": [
+        "Hana",
+        "Dul",
+        "Set",
+        "Net"
+      ],
+      "correct": 2,
+      "explanation": "Set is three."
+    },
+    {
+      "id": "q-tech-01",
+      "category": "techniques",
+      "level": "White",
+      "question": "What is the Korean name for a front kick?",
+      "choices": [
+        "Dollyo Chagi",
+        "Ap Chagi",
+        "Yeop Chagi",
+        "Dwit Chagi"
+      ],
+      "correct": 1,
+      "explanation": "Ap (\"front\") + Chagi (\"kick\")."
+    },
+    {
+      "id": "q-tech-02",
+      "category": "techniques",
+      "level": "Yellow",
+      "question": "What is the Korean name for a roundhouse kick?",
+      "choices": [
+        "Dollyo Chagi",
+        "Ap Chagi",
+        "Naeryo Chagi",
+        "Dwi Huryeo Chagi"
+      ],
+      "correct": 0,
+      "explanation": "Dollyo Chagi is the roundhouse kick, one of the most commonly used scoring kicks."
+    },
+    {
+      "id": "q-tech-03",
+      "category": "techniques",
+      "level": "Yellow",
+      "question": "What is the Korean name for a side kick?",
+      "choices": [
+        "Dwit Chagi",
+        "Ap Chagi",
+        "Yeop Chagi",
+        "Naeryo Chagi"
+      ],
+      "correct": 2,
+      "explanation": "Yeop (\"side\") + Chagi (\"kick\")."
+    },
+    {
+      "id": "q-tech-04",
+      "category": "techniques",
+      "level": "Green",
+      "question": "What is the Korean name for a back kick?",
+      "choices": [
+        "Dwit Chagi",
+        "Dollyo Chagi",
+        "Yeop Chagi",
+        "Naeryo Chagi"
+      ],
+      "correct": 0,
+      "explanation": "Dwi (\"back\") + Chagi (\"kick\")."
+    },
+    {
+      "id": "q-tech-05",
+      "category": "techniques",
+      "level": "Green",
+      "question": "What does \"Momtong Makgi\" mean?",
+      "choices": [
+        "High/face-section block",
+        "Middle/trunk-section block",
+        "Low-section block",
+        "Knife-hand block"
+      ],
+      "correct": 1,
+      "explanation": "Momtong (\"middle/trunk\") + Makgi (\"block\")."
+    },
+    {
+      "id": "q-tech-06",
+      "category": "techniques",
+      "level": "Blue",
+      "question": "What does \"Eolgul Makgi\" mean?",
+      "choices": [
+        "Low-section block",
+        "Middle-section block",
+        "High/face-section block",
+        "Knife-hand block"
+      ],
+      "correct": 2,
+      "explanation": "Eolgul (\"face/high\") + Makgi (\"block\")."
+    },
+    {
+      "id": "q-tech-07",
+      "category": "techniques",
+      "level": "Blue",
+      "question": "What is \"Juchum Seogi\"?",
+      "choices": [
+        "Back stance",
+        "Front/walking stance",
+        "Horse (sitting) stance",
+        "Tiger stance"
+      ],
+      "correct": 2,
+      "explanation": "Juchum Seogi is the wide, low horse/sitting stance."
+    },
+    {
+      "id": "q-tech-08",
+      "category": "techniques",
+      "level": "Red",
+      "question": "What is \"Dwit Kubi\"?",
+      "choices": [
+        "Back stance",
+        "Horse stance",
+        "Front stance",
+        "Tiger stance"
+      ],
+      "correct": 0,
+      "explanation": "Dwit Kubi is the back stance, with weight shifted onto the rear leg."
+    },
+    {
+      "id": "q-tech-09",
+      "category": "techniques",
+      "level": "Red",
+      "question": "What is the Korean name for an axe kick (a downward kicking motion)?",
+      "choices": [
+        "Ap Chagi",
+        "Naeryo Chagi",
+        "Yeop Chagi",
+        "Dollyo Chagi"
+      ],
+      "correct": 1,
+      "explanation": "Naeryo Chagi is the axe kick."
+    },
+    {
+      "id": "q-tech-10",
+      "category": "techniques",
+      "level": "Black Belt",
+      "question": "What is \"Dwi Huryeo Chagi\"?",
+      "choices": [
+        "A basic front kick",
+        "A spinning hook/whip kick",
+        "A low block",
+        "A hand strike"
+      ],
+      "correct": 1,
+      "explanation": "Dwi Huryeo Chagi is an advanced spinning hook (whip) kick."
+    },
+    {
+      "id": "q-ten-01",
+      "category": "tenets",
+      "level": "White",
+      "question": "Which of these is NOT one of the Five Tenets of Taekwondo?",
+      "choices": [
+        "Courtesy",
+        "Integrity",
+        "Flexibility",
+        "Self-Control"
+      ],
+      "correct": 2,
+      "explanation": "The five are Courtesy, Integrity, Perseverance, Self-Control, and Indomitable Spirit."
+    },
+    {
+      "id": "q-ten-02",
+      "category": "tenets",
+      "level": "White",
+      "question": "What is the first of the Five Tenets of Taekwondo?",
+      "choices": [
+        "Perseverance",
+        "Courtesy",
+        "Self-Control",
+        "Indomitable Spirit"
+      ],
+      "correct": 1,
+      "explanation": "Courtesy (Ye Ui) is the first of the Five Tenets."
+    },
+    {
+      "id": "q-ten-03",
+      "category": "tenets",
+      "level": "Yellow",
+      "question": "What is the Korean term for \"Integrity\" in the Five Tenets?",
+      "choices": [
+        "Ye Ui",
+        "Yom Chi",
+        "In Nae",
+        "Guk Gi"
+      ],
+      "correct": 1,
+      "explanation": "Yom Chi means Integrity, the second tenet."
+    },
+    {
+      "id": "q-ten-04",
+      "category": "tenets",
+      "level": "Yellow",
+      "question": "What is the Korean term for \"Perseverance\"?",
+      "choices": [
+        "Ye Ui",
+        "Yom Chi",
+        "In Nae",
+        "Baekjul Boolgul"
+      ],
+      "correct": 2,
+      "explanation": "In Nae means Perseverance, the third tenet."
+    },
+    {
+      "id": "q-ten-05",
+      "category": "tenets",
+      "level": "Green",
+      "question": "What is the Korean term for \"Self-Control\"?",
+      "choices": [
+        "Guk Gi",
+        "In Nae",
+        "Yom Chi",
+        "Ye Ui"
+      ],
+      "correct": 0,
+      "explanation": "Guk Gi means Self-Control, the fourth tenet."
+    },
+    {
+      "id": "q-ten-06",
+      "category": "tenets",
+      "level": "Green",
+      "question": "What is the Korean term for \"Indomitable Spirit,\" the fifth and final tenet?",
+      "choices": [
+        "Guk Gi",
+        "In Nae",
+        "Baekjul Boolgul",
+        "Yom Chi"
+      ],
+      "correct": 2,
+      "explanation": "Baekjul Boolgul means Indomitable Spirit."
+    },
+    {
+      "id": "q-po-01",
+      "category": "poomsae",
+      "level": "Yellow",
+      "question": "What is the name of the first Taegeuk poomsae (form)?",
+      "choices": [
+        "Taegeuk Il Jang",
+        "Taegeuk Sam Jang",
+        "Koryo",
+        "Taegeuk Pal Jang"
+      ],
+      "correct": 0,
+      "explanation": "\"Il\" means one -- Taegeuk Il Jang is Form 1."
+    },
+    {
+      "id": "q-po-02",
+      "category": "poomsae",
+      "level": "Yellow",
+      "question": "What is the second Taegeuk form called?",
+      "choices": [
+        "Taegeuk Il Jang",
+        "Taegeuk Ee Jang",
+        "Taegeuk Sam Jang",
+        "Taegeuk Sa Jang"
+      ],
+      "correct": 1,
+      "explanation": "\"Ee\" means two -- Taegeuk Ee Jang is Form 2."
+    },
+    {
+      "id": "q-po-03",
+      "category": "poomsae",
+      "level": "Green",
+      "question": "What is the fourth Taegeuk form called?",
+      "choices": [
+        "Taegeuk Sam Jang",
+        "Taegeuk Sa Jang",
+        "Taegeuk Oh Jang",
+        "Taegeuk Yook Jang"
+      ],
+      "correct": 1,
+      "explanation": "\"Sa\" means four -- Taegeuk Sa Jang is Form 4."
+    },
+    {
+      "id": "q-po-04",
+      "category": "poomsae",
+      "level": "Blue",
+      "question": "What is the sixth Taegeuk form called?",
+      "choices": [
+        "Taegeuk Oh Jang",
+        "Taegeuk Yook Jang",
+        "Taegeuk Chil Jang",
+        "Taegeuk Pal Jang"
+      ],
+      "correct": 1,
+      "explanation": "\"Yook\" means six -- Taegeuk Yook Jang is Form 6."
+    },
+    {
+      "id": "q-po-05",
+      "category": "poomsae",
+      "level": "Red",
+      "question": "What is the eighth and final color-belt Taegeuk form called?",
+      "choices": [
+        "Taegeuk Chil Jang",
+        "Taegeuk Pal Jang",
+        "Koryo",
+        "Keumgang"
+      ],
+      "correct": 1,
+      "explanation": "\"Pal\" means eight -- Taegeuk Pal Jang is the last of the eight Taegeuk forms."
+    },
+    {
+      "id": "q-po-06",
+      "category": "poomsae",
+      "level": "Black Belt",
+      "question": "What is the name of the first black-belt (1st Dan) poomsae in the Kukkiwon curriculum?",
+      "choices": [
+        "Keumgang",
+        "Taebaek",
+        "Koryo",
+        "Hansoo"
+      ],
+      "correct": 2,
+      "explanation": "Koryo, named for the Koryo dynasty, is the first Dan-level form after the Taegeuk series."
+    },
+    {
+      "id": "q-po-07",
+      "category": "poomsae",
+      "level": "Black Belt",
+      "question": "\"Keumgang,\" the 2nd Dan poomsae, means what?",
+      "choices": [
+        "Water",
+        "Diamond",
+        "Open plain",
+        "Sky"
+      ],
+      "correct": 1,
+      "explanation": "Keumgang means \"diamond\" -- symbolizing hardness and being unbreakable."
+    },
+    {
+      "id": "q-po-08",
+      "category": "poomsae",
+      "level": "Black Belt",
+      "question": "Which black-belt poomsae is named after water, symbolizing softness overcoming hardness?",
+      "choices": [
+        "Koryo",
+        "Pyongwon",
+        "Hansoo",
+        "Ilyeo"
+      ],
+      "correct": 2,
+      "explanation": "Hansoo (8th Dan poomsae) means \"water,\" representing adaptability."
+    },
+    {
+      "id": "q-belt-01",
+      "category": "belts",
+      "level": "White",
+      "question": "In most Taekwondo schools, which belt color is traditionally earned first?",
+      "choices": [
+        "Black",
+        "Red",
+        "White",
+        "Blue"
+      ],
+      "correct": 2,
+      "explanation": "White traditionally represents a beginning, before any knowledge has been gained."
+    },
+    {
+      "id": "q-belt-02",
+      "category": "belts",
+      "level": "Yellow",
+      "question": "In commonly taught belt symbolism, what does the yellow belt represent?",
+      "choices": [
+        "Mastery and depth",
+        "The seed of knowledge being planted",
+        "Danger and caution",
+        "The sky reaching upward"
+      ],
+      "correct": 1,
+      "explanation": "Yellow is often taught as the seed of knowledge being planted in the ground."
+    },
+    {
+      "id": "q-belt-03",
+      "category": "belts",
+      "level": "Green",
+      "question": "In commonly taught belt symbolism, what does the green belt represent?",
+      "choices": [
+        "Growth, like a seed sprouting",
+        "A blank slate",
+        "Danger, demanding self-control",
+        "Proficiency beyond fear"
+      ],
+      "correct": 0,
+      "explanation": "Green is often taught as the plant's growth, following the yellow belt's planted seed."
+    },
+    {
+      "id": "q-belt-04",
+      "category": "belts",
+      "level": "Blue",
+      "question": "In commonly taught belt symbolism, what does the red belt represent?",
+      "choices": [
+        "Innocence",
+        "Growth",
+        "Danger and caution, requiring self-control",
+        "The sky"
+      ],
+      "correct": 2,
+      "explanation": "Red is often taught to represent danger -- the student has real power now and must exercise self-control."
+    },
+    {
+      "id": "q-belt-05",
+      "category": "belts",
+      "level": "Red",
+      "question": "Which statement about Taekwondo belt color systems is most accurate?",
+      "choices": [
+        "All Taekwondo schools use the identical 6 belt colors in the same order",
+        "Belt color order and count vary by organization and by individual school",
+        "Belt colors are standardized by International Olympic rules",
+        "Black is always the second belt a student earns"
+      ],
+      "correct": 1,
+      "explanation": "Kukkiwon/WT, ITF, ATA, and independent schools all use different belt systems -- there's no single universal order or color count."
+    },
+    {
+      "id": "q-spar-01",
+      "category": "sparring",
+      "level": "White",
+      "question": "In Olympic-style Taekwondo sparring, which body areas are legal scoring targets?",
+      "choices": [
+        "The back and spine",
+        "The trunk (torso) and head",
+        "The knees and shins",
+        "The arms only"
+      ],
+      "correct": 1,
+      "explanation": "The trunk (via the hogu) and the head are legal scoring areas; strikes to the back or below the belt are not."
+    },
+    {
+      "id": "q-spar-02",
+      "category": "sparring",
+      "level": "Yellow",
+      "question": "In World Taekwondo Olympic-style scoring, how many points is a basic kick to the trunk worth?",
+      "choices": [
+        "1 point",
+        "2 points",
+        "3 points",
+        "5 points"
+      ],
+      "correct": 1,
+      "explanation": "A kick to the trunk scores 2 points; a punch to the trunk scores 1."
+    },
+    {
+      "id": "q-spar-03",
+      "category": "sparring",
+      "level": "Green",
+      "question": "How many points is a kick to the head worth?",
+      "choices": [
+        "1 point",
+        "2 points",
+        "3 points",
+        "5 points"
+      ],
+      "correct": 2,
+      "explanation": "A kick to the head scores 3 points."
+    },
+    {
+      "id": "q-spar-04",
+      "category": "sparring",
+      "level": "Blue",
+      "question": "How many points is a turning/spinning kick to the head worth?",
+      "choices": [
+        "2 points",
+        "3 points",
+        "4 points",
+        "5 points"
+      ],
+      "correct": 3,
+      "explanation": "A turning/spinning kick to the head is the highest-value strike, worth 5 points."
+    },
+    {
+      "id": "q-spar-05",
+      "category": "sparring",
+      "level": "Red",
+      "question": "What is the padded chest/trunk protector used in sparring called?",
+      "choices": [
+        "Dobok",
+        "Hogu",
+        "Dojang",
+        "Poomsae"
+      ],
+      "correct": 1,
+      "explanation": "The hogu is the trunk protector worn during sparring."
+    },
+    {
+      "id": "q-spar-06",
+      "category": "sparring",
+      "level": "Black Belt",
+      "question": "In standard World Taekwondo competition, how is a match typically structured?",
+      "choices": [
+        "1 round of 5 minutes",
+        "2 rounds of 3 minutes",
+        "3 rounds of 2 minutes, with a golden-point round if tied",
+        "5 rounds of 1 minute"
+      ],
+      "correct": 2,
+      "explanation": "Matches are typically 3 rounds of 2 minutes with a 1-minute rest between; a tied match goes to a golden-point sudden-death round."
+    },
+    {
+      "id": "q-triv-01",
+      "category": "trivia",
+      "level": "Green",
+      "question": "At which Olympics did Taekwondo first appear, as a demonstration sport?",
+      "choices": [
+        "1980 Moscow",
+        "1988 Seoul",
+        "1996 Atlanta",
+        "2000 Sydney"
+      ],
+      "correct": 1,
+      "explanation": "Taekwondo debuted as a demonstration sport at the 1988 Seoul Games (and again in 1992), before becoming a full medal sport in 2000."
+    },
+    {
+      "id": "q-triv-02",
+      "category": "trivia",
+      "level": "Blue",
+      "question": "What does the electronic gear used to register scoring strikes in Olympic sparring stand for?",
+      "choices": [
+        "PSS (Protector and Scoring System)",
+        "TKO (Total Kick Output)",
+        "ESS (Electronic Sparring System)",
+        "PGS (Point Generation System)"
+      ],
+      "correct": 0,
+      "explanation": "PSS gear -- sensors in the hogu, headgear, and foot socks -- automatically registers valid scoring strikes."
+    },
+    {
+      "id": "q-triv-03",
+      "category": "trivia",
+      "level": "Red",
+      "question": "What is the name of the separate Taekwondo organization founded in 1966 by General Choi Hong Hi, with its own distinct curriculum?",
+      "choices": [
+        "World Taekwondo (WT)",
+        "USA Taekwondo",
+        "International Taekwon-Do Federation (ITF)",
+        "Kukkiwon"
+      ],
+      "correct": 2,
+      "explanation": "The ITF is a separate, older organization not affiliated with Kukkiwon/World Taekwondo, with its own terminology and belt conventions."
+    },
+    {
+      "id": "q-triv-04",
+      "category": "trivia",
+      "level": "Black Belt",
+      "question": "Why does Olympic Taekwondo typically award two bronze medals per weight category instead of one?",
+      "choices": [
+        "Judges can't agree on a single winner",
+        "The single-elimination bracket includes a repechage, giving fighters beaten by a finalist a second chance",
+        "Bronze medals are awarded for style points",
+        "It's a tradition borrowed from boxing only"
+      ],
+      "correct": 1,
+      "explanation": "Like judo and wrestling, Taekwondo uses a repechage bracket, which structurally produces two bronze medalists per category."
+    }
+  ]
+}

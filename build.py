@@ -19,7 +19,7 @@ from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-from data import content, flashcards
+from data import content, flashcards, quiz
 
 ROOT = Path(__file__).parent
 TEMPLATES_DIR = ROOT / "templates"
@@ -32,6 +32,16 @@ BASE_CONTEXT = {
 }
 
 FLASHCARDS_DATA = {"categories": flashcards.FLASHCARD_CATEGORIES, "cards": flashcards.FLASHCARDS}
+QUIZ_DATA = {"levels": quiz.QUIZ_LEVELS, "categories": quiz.QUIZ_CATEGORIES, "questions": quiz.QUESTIONS}
+
+# Each entry here gets written to static/data/<name>.json AND is available
+# to any page's template context as `<name>_json` (a JSON string) so pages
+# can embed their data inline instead of fetching it -- fetch() is blocked
+# by browsers for local file:// pages, but an inline <script> tag isn't.
+STATIC_DATASETS = {
+    "flashcards": FLASHCARDS_DATA,
+    "quiz": QUIZ_DATA,
+}
 
 PAGES = [
     ("index.html", "index.html", {
@@ -60,6 +70,11 @@ PAGES = [
         "categories": flashcards.FLASHCARD_CATEGORIES,
         "cards_json": json.dumps(FLASHCARDS_DATA),
     }),
+    ("quiz.html", "quiz.html", {
+        "levels": quiz.QUIZ_LEVELS,
+        "categories": quiz.QUIZ_CATEGORIES,
+        "quiz_json": json.dumps(QUIZ_DATA),
+    }),
 ]
 
 
@@ -80,9 +95,10 @@ def build():
         print(f"built {out_path.relative_to(ROOT)}")
 
     STATIC_DATA_DIR.mkdir(parents=True, exist_ok=True)
-    flashcards_json = STATIC_DATA_DIR / "flashcards.json"
-    flashcards_json.write_text(json.dumps(FLASHCARDS_DATA, indent=2), encoding="utf-8")
-    print(f"built {flashcards_json.relative_to(ROOT)}")
+    for name, dataset in STATIC_DATASETS.items():
+        out_path = STATIC_DATA_DIR / f"{name}.json"
+        out_path.write_text(json.dumps(dataset, indent=2), encoding="utf-8")
+        print(f"built {out_path.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":

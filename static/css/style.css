@@ -677,6 +677,94 @@ section { padding: 64px 0; }
 }
 
 /* =========================================================
+   Quiz app
+   ========================================================= */
+.quiz-start {
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.quiz-start .btn { align-self: center; margin-top: 10px; }
+
+.quiz-card {
+  max-width: 640px;
+  margin: 0 auto;
+  background: linear-gradient(160deg, var(--bg-card), var(--bg-elevated));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-card);
+}
+.quiz-question {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  margin: 10px 0 22px;
+}
+
+.quiz-choices {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.quiz-choice {
+  text-align: left;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 14px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.1s ease;
+}
+.quiz-choice:hover:not(:disabled) { border-color: var(--gold); transform: translateY(-1px); }
+.quiz-choice:disabled { cursor: default; }
+.quiz-choice-correct {
+  background: rgba(63, 163, 77, 0.16);
+  border-color: #3fa34d;
+  color: #6bd97a;
+}
+.quiz-choice-incorrect {
+  background: rgba(224, 49, 58, 0.16);
+  border-color: var(--red);
+  color: #ff8f95;
+}
+
+.quiz-explanation {
+  margin: 20px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-soft);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.quiz-results-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.quiz-review-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  margin-bottom: 10px;
+}
+.quiz-review-question { font-weight: 700; margin: 0 0 8px; color: var(--text); font-size: 0.92rem; }
+.quiz-review-line { margin: 0 0 2px; font-size: 0.88rem; color: var(--text-muted); }
+.quiz-review-wrong { color: #ff8f95; font-weight: 600; }
+.quiz-review-correct { color: #6bd97a; font-weight: 600; }
+
+@media (max-width: 640px) {
+  .quiz-card { padding: 22px; }
+}
+
+/* =========================================================
    Footer
    ========================================================= */
 .site-footer {

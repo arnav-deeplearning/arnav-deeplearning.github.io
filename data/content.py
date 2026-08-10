@@ -158,7 +158,8 @@ APPS = [
     {
         "title": "TKD Quiz — Belt Levels",
         "icon": "🎯",
-        "status": "coming-soon",
+        "status": "live",
+        "href": "quiz.html",
         "description": (
             "Test your knowledge with quizzes leveled by belt rank, from "
             "white belt basics up to black belt theory."

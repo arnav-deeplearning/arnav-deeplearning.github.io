@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block title %}TKD Quiz | {{ site.title }}{% endblock %}
+{% block content %}
+
+<section style="padding-top: 56px;">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Apps &amp; resources &middot; TKD Quiz</span>
+      <h2>Test your Taekwondo knowledge</h2>
+      <p>General knowledge every Taekwondo student can use — not tied to any one school. Pick a level and category, then see how you score.</p>
+    </div>
+
+    <!-- Setup screen -->
+    <div id="quizSetup">
+      <div class="filter-bar reveal">
+        <div class="filter-field">
+          <label for="levelFilter">Level</label>
+          <select id="levelFilter">
+            <option value="all">All levels</option>
+            {% for level in levels %}
+            <option value="{{ level }}">{{ level }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="filter-field">
+          <label for="categoryFilter">Category</label>
+          <select id="categoryFilter">
+            <option value="all">All categories</option>
+            {% for cat in categories %}
+            <option value="{{ cat.id }}">{{ cat.label }}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+      <div class="quiz-start reveal">
+        <p class="muted" id="questionCountLabel">&nbsp;</p>
+        <p class="muted" id="bestScoreLabel"></p>
+        <button type="button" class="btn btn-primary" id="startQuizBtn">Start Quiz</button>
+      </div>
+    </div>
+
+    <!-- In-progress screen -->
+    <div id="quizPlay" style="display:none;">
+      <div class="deck-meta reveal">
+        <div class="progress-bar"><div class="progress-bar-fill" id="progressFill"></div></div>
+        <div class="deck-meta-row">
+          <span class="muted" id="questionPosition">Question 0 of 0</span>
+          <span class="stat-pill stat-known" id="scoreLabel">0 correct</span>
+        </div>
+      </div>
+
+      <div class="quiz-card reveal">
+        <span class="flashcard-category" id="questionCategory">&nbsp;</span>
+        <h3 class="quiz-question" id="questionText">Loading&hellip;</h3>
+        <div class="quiz-choices" id="quizChoices"></div>
+        <p class="quiz-explanation" id="quizExplanation" style="display:none;"></p>
+      </div>
+
+      <div class="deck-actions reveal">
+        <button type="button" class="btn btn-ghost" id="quitQuizBtn">End Quiz</button>
+        <button type="button" class="btn btn-primary" id="nextQuestionBtn" disabled>Next Question</button>
+      </div>
+    </div>
+
+    <!-- Results screen -->
+    <div id="quizResults" class="note-box reveal" style="display:none;">
+      <strong id="resultsHeadline">Quiz complete!</strong>
+      <p id="resultsSummary" style="margin: 8px 0 18px;"></p>
+      <div id="resultsReview"></div>
+      <div class="quiz-results-actions">
+        <button type="button" class="btn btn-ghost" id="changeFiltersBtn">Change Level / Category</button>
+        <button type="button" class="btn btn-primary" id="retakeQuizBtn">Retake Quiz</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script id="quiz-data" type="application/json">{{ quiz_json | safe }}</script>
+<script src="static/js/quiz.js"></script>
+{% endblock %}
