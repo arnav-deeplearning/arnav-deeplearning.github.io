@@ -28,7 +28,7 @@ if (revealTargets.length && "IntersectionObserver" in window) {
         }
       });
     },
-    { threshold: 0.15 }
+    { threshold: 0, rootMargin: "0px 0px -10% 0px" }
   );
   revealTargets.forEach((el) => observer.observe(el));
 } else {

@@ -25,6 +25,14 @@
   --red-belt: #e0313a;
   --black-belt: #1a1c22;
 
+  --tip-autism: #9b8cf0;
+  --tip-adhd: #f0a84a;
+  --tip-sensory: #4ac9d9;
+  --tip-down-syndrome: #f0d24a;
+  --tip-physical: #6fcf7d;
+  --tip-anxiety: #7fb8f0;
+  --tip-universal: #d8ac47;
+
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 22px;
@@ -763,6 +771,86 @@ section { padding: 64px 0; }
 @media (max-width: 640px) {
   .quiz-card { padding: 22px; }
 }
+
+/* =========================================================
+   Adaptive Coaching Tips app
+   ========================================================= */
+.disclaimer-box {
+  max-width: 760px;
+  margin: 0 auto 32px;
+  background: rgba(216, 172, 71, 0.08);
+  border: 1px solid rgba(216, 172, 71, 0.3);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+}
+.disclaimer-box strong { display: block; color: var(--gold-soft); margin-bottom: 6px; }
+.disclaimer-box p { margin: 0; font-size: 0.9rem; color: var(--text-muted); }
+
+.filter-field input[type="text"] {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  min-width: 220px;
+}
+.filter-field input[type="text"]:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
+.filter-field input[type="text"]::placeholder { color: var(--text-faint); font-weight: 500; }
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+}
+
+.tip-card {
+  gap: 10px;
+  border-top: 3px solid var(--tip-accent, var(--border));
+}
+.tip-card h3 { margin-top: 4px; }
+.tip-card .card-icon {
+  font-size: 1.5rem;
+  background: var(--bg-elevated);
+}
+.tip-why {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-soft);
+}
+.tip-why strong { color: var(--text); }
+.tip-source-link {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--gold-soft);
+  margin-top: auto;
+  padding-top: 4px;
+}
+.tip-source-link:hover { text-decoration: underline; }
+
+.sources-list {
+  max-width: 760px;
+  margin: 0 auto;
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.sources-list li { padding-left: 6px; }
+.source-title { display: block; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.source-meta { display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px; }
+.source-note {
+  display: block;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--text-faint);
+  margin-bottom: 8px;
+}
+.sources-list a { font-size: 0.85rem; font-weight: 700; color: var(--gold-soft); }
+.sources-list a:hover { text-decoration: underline; }
 
 /* =========================================================
    Footer

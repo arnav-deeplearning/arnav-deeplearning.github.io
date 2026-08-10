@@ -19,7 +19,7 @@ from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-from data import content, flashcards, quiz
+from data import coaching_tips, content, flashcards, quiz
 
 ROOT = Path(__file__).parent
 TEMPLATES_DIR = ROOT / "templates"
@@ -33,6 +33,11 @@ BASE_CONTEXT = {
 
 FLASHCARDS_DATA = {"categories": flashcards.FLASHCARD_CATEGORIES, "cards": flashcards.FLASHCARDS}
 QUIZ_DATA = {"levels": quiz.QUIZ_LEVELS, "categories": quiz.QUIZ_CATEGORIES, "questions": quiz.QUESTIONS}
+COACHING_TIPS_DATA = {
+    "categories": coaching_tips.SPECIAL_NEEDS_CATEGORIES,
+    "tips": coaching_tips.TIPS,
+    "sources": coaching_tips.SOURCES,
+}
 
 # Each entry here gets written to static/data/<name>.json AND is available
 # to any page's template context as `<name>_json` (a JSON string) so pages
@@ -41,6 +46,7 @@ QUIZ_DATA = {"levels": quiz.QUIZ_LEVELS, "categories": quiz.QUIZ_CATEGORIES, "qu
 STATIC_DATASETS = {
     "flashcards": FLASHCARDS_DATA,
     "quiz": QUIZ_DATA,
+    "coaching-tips": COACHING_TIPS_DATA,
 }
 
 PAGES = [
@@ -74,6 +80,11 @@ PAGES = [
         "levels": quiz.QUIZ_LEVELS,
         "categories": quiz.QUIZ_CATEGORIES,
         "quiz_json": json.dumps(QUIZ_DATA),
+    }),
+    ("coaching-tips.html", "coaching-tips.html", {
+        "categories": coaching_tips.SPECIAL_NEEDS_CATEGORIES,
+        "sources": coaching_tips.SOURCES,
+        "coaching_tips_json": json.dumps(COACHING_TIPS_DATA),
     }),
 ]
 

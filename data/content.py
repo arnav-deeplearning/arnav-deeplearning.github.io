@@ -167,20 +167,10 @@ APPS = [
         "tags": ["Leveled by belt", "Practice mode"],
     },
     {
-        "title": "Form Correction AI",
-        "icon": "🤖",
-        "status": "in-development",
-        "description": (
-            "Computer-vision powered feedback on poomsae and stances, "
-            "designed with accessibility for special needs students "
-            "as a core requirement, not an afterthought."
-        ),
-        "tags": ["Special needs focus", "Computer vision"],
-    },
-    {
         "title": "Adaptive Coaching Tips",
         "icon": "💡",
-        "status": "planned",
+        "status": "live",
+        "href": "coaching-tips.html",
         "description": (
             "Bite-sized, sensory-friendly tips and drills to help "
             "instructors and parents adapt training for special needs "
@@ -199,14 +189,26 @@ APPS = [
         "tags": ["Intermediate+"],
     },
     {
-        "title": "Your idea here",
-        "icon": "✨",
+        "title": "Form Correction AI",
+        "icon": "🤖",
+        "status": "in-development",
+        "description": (
+            "Computer-vision powered feedback on poomsae and stances, "
+            "designed with accessibility for special needs students "
+            "as a core requirement, not an afterthought."
+        ),
+        "tags": ["Special needs focus", "Computer vision"],
+    },
+    {
+        "title": "Attendance Tracker",
+        "icon": "📋",
         "status": "planned",
         "description": (
-            "This template is built to grow — new apps get added here "
-            "as new cards, one at a time."
+            "Track class attendance and streaks over time, so instructors "
+            "can spot patterns and students can see their own consistency "
+            "add up."
         ),
-        "tags": ["Coming eventually"],
+        "tags": ["For instructors", "Progress tracking"],
     },
 ]
 

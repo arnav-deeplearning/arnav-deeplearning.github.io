@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}Adaptive Coaching Tips | {{ site.title }}{% endblock %}
+{% block content %}
+
+<section style="padding-top: 56px;">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Apps &amp; resources &middot; Adaptive Coaching Tips</span>
+      <h2>Coaching tips for every student</h2>
+      <p>Practical, sensory-friendly ideas for instructors and parents adapting Taekwondo training for special needs children — drawn from adapted physical education practice and peer-reviewed research, and tagged by the needs they're most relevant to.</p>
+    </div>
+
+    <div class="disclaimer-box reveal">
+      <strong>Not a substitute for individualized guidance.</strong>
+      <p>
+        These are general suggestions drawn from adapted physical education practice and published
+        research, meant as a starting point for instructors and parents — not medical, therapeutic,
+        or diagnostic advice. Every child is different; when in doubt, loop in your child's
+        occupational therapist, behavioral specialist, or care team, and always ask the student
+        (or their parent) what actually helps them.
+      </p>
+    </div>
+
+    <div class="filter-bar reveal">
+      <div class="filter-field">
+        <label for="categoryFilter">Filter by need</label>
+        <select id="categoryFilter">
+          <option value="all">All tips</option>
+          {% for cat in categories %}
+          <option value="{{ cat.id }}">{{ cat.icon }} {{ cat.label }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="filter-field">
+        <label for="searchInput">Search</label>
+        <input type="text" id="searchInput" placeholder="Search tips&hellip;">
+      </div>
+    </div>
+
+    <p class="muted" id="tipsCount" style="text-align:center; margin-bottom: 20px;">&nbsp;</p>
+
+    <div class="tips-grid" id="tipsGrid"></div>
+    <p class="muted" id="tipsEmpty" style="display:none; text-align:center; margin-top: 20px;">No tips match those filters yet.</p>
+  </div>
+</section>
+
+{% if sources %}
+<section class="mission">
+  <div class="container">
+    <div class="section-head" style="margin-bottom: 20px;">
+      <span class="eyebrow">Sources</span>
+      <h2>Research referenced on this page</h2>
+      <p>Open-access papers and reputable resources behind the tips above.</p>
+    </div>
+    <ol class="sources-list reveal">
+      {% for src in sources %}
+      <li id="source-{{ src.id }}">
+        <span class="source-title">{{ src.title }}</span>
+        <span class="source-meta">{{ src.authors }} &middot; {{ src.venue }} ({{ src.year }})</span>
+        {% if src.note %}<span class="source-note">{{ src.note }}</span>{% endif %}
+        <a href="{{ src.url }}" target="_blank" rel="noopener noreferrer">Read it (open access) &rarr;</a>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+{% endif %}
+
+<script id="coaching-tips-data" type="application/json">{{ coaching_tips_json | safe }}</script>
+<script src="static/js/coaching-tips.js"></script>
+{% endblock %}
