@@ -192,7 +192,8 @@ APPS = [
     {
         "title": "Form Correction AI",
         "icon": "🤖",
-        "status": "in-development",
+        "status": "live",
+        "href": "form-correction.html",
         "description": (
             "Computer-vision powered feedback on poomsae and stances, "
             "designed with accessibility for special needs students "
@@ -203,7 +204,8 @@ APPS = [
     {
         "title": "Attendance Tracker",
         "icon": "📋",
-        "status": "planned",
+        "status": "live",
+        "href": "attendance.html",
         "description": (
             "Track class attendance and streaks over time, so instructors "
             "can spot patterns and students can see their own consistency "

@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% block title %}Form Correction AI | {{ site.title }}{% endblock %}
+{% block content %}
+
+<section style="padding-top: 56px;">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Apps &amp; resources &middot; Form Correction AI</span>
+      <h2>Check your stance with your camera</h2>
+      <p>Real-time computer vision reads your stance through your webcam and gives live feedback — no video ever leaves your device.</p>
+    </div>
+
+    <div class="disclaimer-box warning-box" id="moduleWarning" style="display:none;">
+      <strong>This page can't load right now.</strong>
+      <p id="moduleWarningText"></p>
+    </div>
+
+    <div class="disclaimer-box reveal">
+      <strong>Your camera feed never leaves your device.</strong>
+      <p>
+        Pose detection runs entirely in this browser tab using an open-source vision model — nothing is
+        uploaded, recorded, or sent anywhere. This is a general practice aid, not professional coaching or
+        a substitute for in-person instruction from your instructor. Angle targets are general coaching
+        guidelines, not exact rules — every body and every school is a little different. For best results,
+        stand a few steps back so your whole body (head to feet) is in frame, with clear lighting.
+      </p>
+    </div>
+
+    <div class="filter-bar reveal">
+      <div class="filter-field">
+        <label for="stanceSelect">Stance</label>
+        <select id="stanceSelect">
+          {% for stance in stances %}
+          <option value="{{ stance.id }}">{{ stance.name }} ({{ stance.korean }})</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="filter-field">
+        <label for="sensitivitySelect">Sensitivity</label>
+        <select id="sensitivitySelect">
+          <option value="1.4">Beginner (wider tolerance)</option>
+          <option value="1.0" selected>Standard</option>
+          <option value="0.7">Strict</option>
+        </select>
+      </div>
+    </div>
+
+    <p class="stance-description muted reveal" id="stanceDescription">&nbsp;</p>
+
+    <div class="access-toggles reveal">
+      <label class="access-toggle"><input type="checkbox" id="audioToggle"> Speak feedback aloud</label>
+      <label class="access-toggle"><input type="checkbox" id="skeletonToggle" checked> Show skeleton overlay</label>
+    </div>
+
+    <div class="camera-actions reveal">
+      <button type="button" class="btn btn-primary" id="startCameraBtn">Start Camera</button>
+      <button type="button" class="btn btn-ghost" id="stopCameraBtn" style="display:none;">Stop Camera</button>
+    </div>
+
+    <p class="muted" id="statusMessage" style="text-align:center; margin: 16px 0;">Click "Start Camera" to begin. The pose model (~a few MB) loads the first time you start.</p>
+
+    <div class="camera-stage" id="cameraStage" style="display:none;">
+      <video id="video" playsinline autoplay muted></video>
+      <canvas id="overlay"></canvas>
+    </div>
+
+    <div id="feedbackPanel" class="feedback-panel" style="display:none;"></div>
+  </div>
+</section>
+
+<script id="form-correction-data" type="application/json">{{ form_correction_json | safe }}</script>
+
+<script>
+  // Plain (non-module) script, so this always runs even if the module
+  // script below can't -- e.g. opened as a local file:// page, where
+  // Chrome and other browsers refuse to load `type="module"` scripts
+  // at all (a hard CORS-for-file:// restriction, not something the
+  // module's own code can catch or work around). Without this check,
+  // clicking "Start Camera" would silently do nothing with no clue why.
+  (function () {
+    function showWarning(html) {
+      var box = document.getElementById("moduleWarning");
+      var text = document.getElementById("moduleWarningText");
+      if (box && text) {
+        text.innerHTML = html;
+        box.style.display = "";
+      }
+      var btn = document.getElementById("startCameraBtn");
+      if (btn) btn.disabled = true;
+    }
+
+    if (location.protocol === "file:") {
+      showWarning(
+        "This page loads a computer-vision model as a browser module, which only works when served over " +
+        "<strong>http(s)</strong> — not when opened directly as a local file. Run " +
+        "<code>python -m http.server 8000</code> in the project folder and open " +
+        "<code>http://localhost:8000/form-correction.html</code> instead, or use the live GitHub Pages site."
+      );
+      return;
+    }
+
+    setTimeout(function () {
+      if (!window.__formCorrectionModuleLoaded) {
+        showWarning(
+          "This page couldn't load the pose-detection model. Check your internet connection, and that no " +
+          "ad-blocker or privacy extension is blocking <code>cdn.jsdelivr.net</code> or " +
+          "<code>storage.googleapis.com</code>, then refresh."
+        );
+      }
+    }, 5000);
+  })();
+</script>
+<script type="module" src="static/js/form-correction.js"></script>
+{% endblock %}

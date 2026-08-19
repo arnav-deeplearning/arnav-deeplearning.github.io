@@ -1,0 +1,46 @@
+{
+  "classes": [
+    {
+      "id": "youth",
+      "name": "Youth Class",
+      "description": "Ages 7-12 \u00b7 White through Green belt"
+    },
+    {
+      "id": "teen-adult",
+      "name": "Teen & Adult Class",
+      "description": "Ages 13+ \u00b7 all belt levels"
+    }
+  ],
+  "students": [
+    {
+      "id": "st-01",
+      "name": "Alex P. (example)",
+      "class_id": "youth",
+      "belt": "Yellow"
+    },
+    {
+      "id": "st-02",
+      "name": "Jordan K. (example)",
+      "class_id": "youth",
+      "belt": "Green"
+    },
+    {
+      "id": "st-03",
+      "name": "Sam R. (example)",
+      "class_id": "youth",
+      "belt": "White"
+    },
+    {
+      "id": "st-04",
+      "name": "Morgan L. (example)",
+      "class_id": "teen-adult",
+      "belt": "Blue"
+    },
+    {
+      "id": "st-05",
+      "name": "Casey T. (example)",
+      "class_id": "teen-adult",
+      "belt": "Red"
+    }
+  ]
+}

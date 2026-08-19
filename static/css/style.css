@@ -785,6 +785,18 @@ section { padding: 64px 0; }
 }
 .disclaimer-box strong { display: block; color: var(--gold-soft); margin-bottom: 6px; }
 .disclaimer-box p { margin: 0; font-size: 0.9rem; color: var(--text-muted); }
+.disclaimer-box.warning-box {
+  background: rgba(224, 49, 58, 0.1);
+  border-color: rgba(224, 49, 58, 0.35);
+}
+.disclaimer-box.warning-box strong { color: #ff8f95; }
+.disclaimer-box.warning-box code {
+  background: var(--bg-card);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--gold-soft);
+  font-size: 0.85em;
+}
 
 .filter-field input[type="text"] {
   background: var(--bg-card);
@@ -798,6 +810,17 @@ section { padding: 64px 0; }
 }
 .filter-field input[type="text"]:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
 .filter-field input[type="text"]::placeholder { color: var(--text-faint); font-weight: 500; }
+.filter-field input[type="date"] {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 9px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color-scheme: dark;
+}
+.filter-field input[type="date"]:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
 
 .tips-grid {
   display: grid;
@@ -891,6 +914,257 @@ section { padding: 64px 0; }
   background: linear-gradient(90deg, var(--gold), var(--red));
   border-radius: 999px;
 }
+
+/* =========================================================
+   Attendance Tracker app
+   ========================================================= */
+.tab-nav {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--border-soft);
+  padding-bottom: 0;
+}
+.tab-btn {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-muted);
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 10px 6px 14px;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.tab-btn:hover { color: var(--text); }
+.tab-btn.active { color: var(--text); border-color: var(--red); }
+
+.inline-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+.inline-form input[type="text"] {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  min-width: 180px;
+}
+.inline-form input[type="text"]:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
+.inline-form-small { justify-content: flex-start; margin: 14px 0 0; }
+.inline-form-small input[type="text"] { min-width: 120px; padding: 8px 12px; font-size: 0.85rem; }
+
+.btn-small { padding: 8px 14px; font-size: 0.8rem; }
+
+.roster-card { gap: 12px; }
+.roster-card .card-top { align-items: flex-start; }
+.roster-student-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-soft);
+}
+.roster-student-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+.roster-remove-btn {
+  background: none;
+  border: none;
+  color: var(--text-faint);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 2px 6px;
+}
+.roster-remove-btn:hover { color: var(--red); }
+
+.roster-list {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.attend-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  font-size: 0.95rem;
+}
+.attend-toggle {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 18px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.attend-present {
+  background: rgba(63, 163, 77, 0.15);
+  border-color: #3fa34d;
+  color: #6bd97a;
+}
+.attend-absent {
+  background: rgba(224, 49, 58, 0.15);
+  border-color: var(--red);
+  color: #ff8f95;
+}
+
+.history-table {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.history-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+}
+.history-name { font-weight: 600; font-size: 0.92rem; }
+.history-stats {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.streak-badge {
+  background: rgba(216, 172, 71, 0.15);
+  border: 1px solid rgba(216, 172, 71, 0.35);
+  color: var(--gold-soft);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-weight: 700;
+  font-size: 0.78rem;
+}
+
+.attendance-io {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-soft);
+}
+
+@media (max-width: 640px) {
+  .attend-row, .history-row { flex-direction: column; align-items: flex-start; gap: 10px; }
+}
+
+/* =========================================================
+   Form Correction AI app
+   ========================================================= */
+.stance-description {
+  max-width: 640px;
+  margin: -8px auto 20px;
+  text-align: center;
+  font-size: 0.92rem;
+}
+
+.access-toggles {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.access-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+.access-toggle input { accent-color: var(--red); width: 16px; height: 16px; cursor: pointer; }
+
+.camera-actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 8px;
+}
+
+.camera-stage {
+  position: relative;
+  max-width: 640px;
+  margin: 0 auto 24px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #000;
+  aspect-ratio: 4 / 3;
+}
+.camera-stage video,
+.camera-stage canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1); /* mirror, like looking in a mirror */
+}
+
+.feedback-panel {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.feedback-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  font-size: 0.88rem;
+}
+.feedback-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+.feedback-pass { border-color: rgba(63, 163, 77, 0.35); }
+.feedback-pass .feedback-icon { background: rgba(63, 163, 77, 0.18); color: #6bd97a; }
+.feedback-fail { border-color: rgba(224, 49, 58, 0.35); }
+.feedback-fail .feedback-icon { background: rgba(224, 49, 58, 0.18); color: #ff8f95; }
+.feedback-text { color: var(--text-muted); line-height: 1.5; }
+.feedback-text strong { color: var(--text); }
 
 /* =========================================================
    Footer
