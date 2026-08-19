@@ -63,6 +63,7 @@ STATIC_DATASETS = {
 PAGES = [
     ("index.html", "index.html", {
         "apps_preview": content.APPS[:3],
+        "total_apps": len(content.APPS),
         "status_labels": content.STATUS_LABELS,
         "journey_preview": content.JOURNEY[-3:],
         "profile": content.PROFILE,

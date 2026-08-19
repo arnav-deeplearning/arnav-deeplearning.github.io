@@ -25,7 +25,6 @@ NAV = [
     {"label": "Home", "href": "index.html"},
     {"label": "Bio", "href": "bio.html"},
     {"label": "My Journey", "href": "journey.html"},
-    {"label": "Gallery", "href": "gallery.html"},
     {"label": "Apps & Resources", "href": "resources.html"},
 ]
 
@@ -70,21 +69,64 @@ JOURNEY = [
         ),
     },
     {
-        "period": "Color belt years",
-        "title": "Building the fundamentals",
-        "belt": "yellow",
+        "period": "September 22, 2018",
+        "title": "Blue Belt — 4th Gup",
+        "belt": "blue",
         "description": (
-            "Progressed through the color belt ranks, learning poomsae, "
-            "sparring basics, and the discipline of consistent practice."
+            "Promoted to Blue Belt, 4th Gup, certified by the Ji Ho Choi "
+            "Taekwondo Institute Black Belt Center."
         ),
     },
     {
-        "period": "Rising through the ranks",
-        "title": "Toward the black belt",
-        "belt": "red",
+        "period": "2022",
+        "title": "Advancing through the color belts",
+        "belt": "green",
         "description": (
-            "Sharpened forms, board breaking, and sparring technique "
-            "while taking on more responsibility as a senior student."
+            "Continued testing through the Green and Yellow Gup ranks at "
+            "the Black Belt Center, building toward black belt eligibility."
+        ),
+    },
+    {
+        "period": "2023",
+        "title": "Black Belt achieved",
+        "belt": "black",
+        "description": (
+            "Earned 1st Dan Black Belt at the Ji Ho Choi Taekwondo "
+            "Institute, capped off by testing up through Blue, 2nd Gup "
+            "that April."
+        ),
+    },
+    {
+        "period": "July 7, 2023",
+        "title": "Special Needs Mentor Training",
+        "belt": "black",
+        "description": (
+            "Completed a 3.0-hour Level I training program for mentors "
+            "and instructors of children with special needs, through the "
+            "Spectrum Taekwondo Instructor Education and Development "
+            "program."
+        ),
+    },
+    {
+        "period": "August 9, 2023",
+        "title": "Certificate of Recognition — Spectrum Taekwondo",
+        "belt": "black",
+        "description": (
+            "Recognized by Spectrum Taekwondo and the Jiho Choi TKD "
+            "Institute for 10 volunteer hours as a mentor during the PEC "
+            "(Parents with Exceptional Needs Children) summer program, "
+            "demonstrating the Five Tenets of Taekwondo throughout."
+        ),
+    },
+    {
+        "period": "February 14, 2026",
+        "title": "2nd Dan — Kukkiwon Certified",
+        "belt": "black",
+        "description": (
+            "Officially Kukkiwon-certified 2nd Dan Black Belt (Certificate "
+            "No. 09878182). Kukkiwon certificates are typically issued "
+            "roughly a year after testing, so this documents a promotion "
+            "earned earlier."
         ),
     },
     {
