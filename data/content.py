@@ -181,7 +181,8 @@ APPS = [
     {
         "title": "Sparring Strategy Trainer",
         "icon": "🥊",
-        "status": "planned",
+        "status": "live",
+        "href": "sparring.html",
         "description": (
             "Scenario-based drills that help students think through "
             "sparring strategy, not just memorize combinations."

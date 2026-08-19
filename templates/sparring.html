@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block title %}Sparring Strategy Trainer | {{ site.title }}{% endblock %}
+{% block content %}
+
+<section style="padding-top: 56px;">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Apps &amp; resources &middot; Sparring Strategy Trainer</span>
+      <h2>Think through the match, not just the moves</h2>
+      <p>Realistic sparring situations, not just technique drills — pick the strategically sound move, see why it works, and find out where your tactical thinking is strongest.</p>
+    </div>
+
+    <!-- Setup screen -->
+    <div id="sparringSetup">
+      <div class="filter-bar reveal">
+        <div class="filter-field">
+          <label for="levelFilter">Level</label>
+          <select id="levelFilter">
+            <option value="all">All levels</option>
+            {% for level in levels %}
+            <option value="{{ level }}">{{ level }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="filter-field">
+          <label for="categoryFilter">Focus area</label>
+          <select id="categoryFilter">
+            <option value="all">All focus areas</option>
+            {% for cat in categories %}
+            <option value="{{ cat.id }}">{{ cat.label }}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+      <div class="quiz-start reveal">
+        <p class="muted" id="scenarioCountLabel">&nbsp;</p>
+        <p class="muted" id="bestScoreLabel"></p>
+        <button type="button" class="btn btn-primary" id="startTrainerBtn">Start Training</button>
+      </div>
+    </div>
+
+    <!-- In-progress screen -->
+    <div id="sparringPlay" style="display:none;">
+      <div class="deck-meta reveal">
+        <div class="progress-bar"><div class="progress-bar-fill" id="progressFill"></div></div>
+        <div class="deck-meta-row">
+          <span class="muted" id="scenarioPosition">Scenario 0 of 0</span>
+          <span class="stat-pill stat-known" id="scoreLabel">0 correct</span>
+        </div>
+      </div>
+
+      <div class="quiz-card scenario-card reveal">
+        <span class="flashcard-category" id="scenarioCategory">&nbsp;</span>
+        <p class="scenario-situation" id="scenarioSituation"></p>
+        <h3 class="quiz-question" id="scenarioPrompt">Loading&hellip;</h3>
+        <div class="quiz-choices" id="scenarioChoices"></div>
+        <p class="quiz-explanation" id="scenarioExplanation" style="display:none;"></p>
+      </div>
+
+      <div class="deck-actions reveal">
+        <button type="button" class="btn btn-ghost" id="quitTrainerBtn">End Session</button>
+        <button type="button" class="btn btn-primary" id="nextScenarioBtn" disabled>Next Scenario</button>
+      </div>
+    </div>
+
+    <!-- Results screen -->
+    <div id="sparringResults" class="note-box" style="display:none;">
+      <strong id="resultsHeadline">Session complete!</strong>
+      <p id="resultsSummary" style="margin: 8px 0 18px;"></p>
+
+      <div id="categoryBreakdown" class="category-breakdown"></div>
+
+      <div id="resultsReview" style="margin-top: 18px;"></div>
+      <div class="quiz-results-actions">
+        <button type="button" class="btn btn-ghost" id="changeFiltersBtn">Change Level / Focus</button>
+        <button type="button" class="btn btn-primary" id="retakeTrainerBtn">Train Again</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% if sources %}
+<section class="mission">
+  <div class="container">
+    <div class="section-head" style="margin-bottom: 20px;">
+      <span class="eyebrow">Sources</span>
+      <h2>Where this strategy comes from</h2>
+      <p>Coaching principles and research behind the scenarios above.</p>
+    </div>
+    <ol class="sources-list reveal">
+      {% for src in sources %}
+      <li id="source-{{ src.id }}">
+        <span class="source-title">{{ src.title }}</span>
+        <span class="source-meta">{{ src.authors }} &middot; {{ src.venue }} ({{ src.year }})</span>
+        {% if src.note %}<span class="source-note">{{ src.note }}</span>{% endif %}
+        <a href="{{ src.url }}" target="_blank" rel="noopener noreferrer">Read it &rarr;</a>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+{% endif %}
+
+<script id="sparring-data" type="application/json">{{ sparring_json | safe }}</script>
+<script src="static/js/sparring.js"></script>
+{% endblock %}

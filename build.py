@@ -19,7 +19,7 @@ from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-from data import coaching_tips, content, flashcards, quiz
+from data import coaching_tips, content, flashcards, quiz, sparring
 
 ROOT = Path(__file__).parent
 TEMPLATES_DIR = ROOT / "templates"
@@ -38,6 +38,12 @@ COACHING_TIPS_DATA = {
     "tips": coaching_tips.TIPS,
     "sources": coaching_tips.SOURCES,
 }
+SPARRING_DATA = {
+    "levels": sparring.SPARRING_LEVELS,
+    "categories": sparring.SCENARIO_CATEGORIES,
+    "scenarios": sparring.SCENARIOS,
+    "sources": sparring.SOURCES,
+}
 
 # Each entry here gets written to static/data/<name>.json AND is available
 # to any page's template context as `<name>_json` (a JSON string) so pages
@@ -47,6 +53,7 @@ STATIC_DATASETS = {
     "flashcards": FLASHCARDS_DATA,
     "quiz": QUIZ_DATA,
     "coaching-tips": COACHING_TIPS_DATA,
+    "sparring": SPARRING_DATA,
 }
 
 PAGES = [
@@ -85,6 +92,12 @@ PAGES = [
         "categories": coaching_tips.SPECIAL_NEEDS_CATEGORIES,
         "sources": coaching_tips.SOURCES,
         "coaching_tips_json": json.dumps(COACHING_TIPS_DATA),
+    }),
+    ("sparring.html", "sparring.html", {
+        "levels": sparring.SPARRING_LEVELS,
+        "categories": sparring.SCENARIO_CATEGORIES,
+        "sources": sparring.SOURCES,
+        "sparring_json": json.dumps(SPARRING_DATA),
     }),
 ]
 
